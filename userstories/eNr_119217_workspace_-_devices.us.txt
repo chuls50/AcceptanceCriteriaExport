@@ -1,0 +1,64 @@
+User Story ID: 119217
+Title: eNcounter Refresh: Workspace - Devices
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Devices are listed (>= 1 device)
+Given a user clicks the devices button
+When one or more cameras are connected to the workstation
+Then all connected cameras are listed at the top of the device menu
+
+Scenario 2: No devices are listed (0 devices)
+Given a user clicks the devices button
+When no cameras are connected to the workstation
+Then there will be no cameras listed at the top of the device menu
+
+Scenario 3: Device is selected (1st time)
+Given one or more cameras are connected to the workstation
+When a user clicks on a camera listed in the device menu
+Then the live camera stream is displayed in the center of the Workstation screen
+AND the live camera stream is included in the active videoconference session
+
+Scenario 4: Device is selected (2nd+ time)
+Given one or more cameras are connected to the workstation
+AND the user has already selected a camera
+When a user clicks on a camera listed in the device menu
+Then the previous camera stream is not visible in the center of the Workstation screen
+AND the previous camera stream is removed from the active videoconference session
+AND the live camera stream is displayed in the center of the Workstation screen
+AND the live camera stream is included in the active videoconference session
+
+Scenario 5: Default Camera Feed
+Given the user has landed on the workspace screen
+When there is an exam camera plugged in
+Then the system will default to displaying the video feed from exam camera in the center of the workspace screen
+
+Scenario 6: Devices Button
+Given the user has navigated to the workspace screen
+And the Devices button had rendered
+When the user selects the Devices button
+Then the devices menu will open
+And it will display all configured and connected devices
+And connected cameras will always display at the top of the list
+
+Scenario 7: Devices Button - close
+Given the user has selected the Devices button
+And the devices menu has opened
+When the user selects Close
+Then the devices menu will close
+
+Scenario 8: Devices Button- select device
+Given the user has selected the Devices button
+And the devices menu has opened
+When the user selects a device from the list
+Then the devices menu will close
+
+Scenario 9: Devices Button- click away
+Given the user has selected the Devices button
+And the devices menu has opened
+When the user clicks away from the devices menu
+Then the devices menu will close

@@ -1,0 +1,76 @@
+User Story ID: 118557
+Title: eNcounter Refresh: Welcome/Log In Screen - Forms Based Authentication
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Default authentication method (forms based)
+Given the application is configured for forms based authentication
+When application loads at start up
+Then the welcome screen is visible with the following components:
+- username field
+- password field
+- sign-in Log-in button
+- 'Forgot your password?' button
+- Sign in with Microsoft button  (outlined in -User Story 119830 eNcounter Refresh: Welcome/Log In Screen - Entra SSO)
+- Message: Please ensure you have cleared all devices of previous patient data.
+- Is this an Emergency? button (User Story 119831 eNcounter Refresh: Welcome/Log In Screen - Is this an Emergency?)
+-Copyright text
+
+Scenario 2: User authenticates successfully (forms based)
+Given the user enters a valid username and password
+When the user clicks the Sign-In button
+Then the application navigates to the patient intake screen (defined in #118537)
+
+Scenario 3: User authenticates unsuccessfully (forms based)
+Given the user enters a valid username and password
+When the user clicks the Sign-In button
+Then the application displays an error to the user
+And highlights the username and password fields red, with alert icon
+And the user will have the ability to close the error message by selecting "x"
+
+Scenario 4: User forgot password (forms based)
+Given the user forgot their credentials
+When the user clicks the 'Forgot your password?' button
+Then the application navigates to the forgot/change password screen (defined in #108770)
+
+Scenario 5: Not Licensed (Default to ClearSteth Listen-Only)
+Given no license is activated on the host machine
+When the loading process completes
+Then the application opens as ClearSteth with listen-only functionality
+
+Scenario 6: eNcounter License
+Given an eNcounter license is activated on the host machine
+When the loading process completes
+Then the application displays the 'eNcounter' variant of the welcome/log in screen as defined in the attached Figma link
+
+Scenario 7: ClearSteth License
+Given a ClearSteth license is activated on the host machine
+When the loading process completes
+Then the application displays the 'ClearSteth' variant of the welcome/log in screen (defined in #101722)
+
+Scenario 8: Ensure Devices are Cleared of Previous Data
+Given the eNcounter licensed user has launched the eNcounter system
+When the user is navigated to the eNcounter variant of the Welcome/Log In screen
+Then the user will see the below message
+Please ensure you have cleared all devices of previous patient data.
+
+Scenario 9: Sign in with Microsoft
+Given the eNcounter licensed user has launched the eNcounter system
+When the user is navigated to the eNcounter variant of the Welcome/Log In screen
+Then the user will have the option to "Sign in With Microsoft"
+User Story 119830 eNcounter Refresh: Welcome/Log In Screen - Entra SSO
+
+Scenario 10: Is this an emergency?
+Given the eNcounter licensed user has launched the eNcounter system
+When the user is navigated to the eNcounter variant of the Welcome/Log In screen
+Then the user will have the option to select "Is this an emergency"
+User Story 119831 eNcounter Refresh: Welcome/Log In Screen - Is this an Emergency?
+
+Scenario 9: Copyright Text
+Given the eNcounter licensed user has launched the eNcounter system
+When the user is navigated to the eNcounter variant of the Welcome/Log In screen
+Then the user will see the copyright text at the bottom of the screen

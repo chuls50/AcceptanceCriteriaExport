@@ -1,0 +1,25 @@
+User Story ID: 119222
+Title: eNcounter Refresh: Workspace - Tools (Initial Setup)
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Scenario 1: User expands the tool bar
+Given the toolbar is collapsed
+When the user clicks the tool bar
+Then the toolbar expands and displays the following buttons:
+* Take Snapshot
+
+Scenario 2: User collapses the tool bar
+Given the toolbar is expanded
+When the user clicks the tool bar collapse icon
+Then the toolbar collapses
+
+Scenario 3: User clicks Capture Image button
+Given the toolbar is expanded
+AND an exam camera is selected in the Devices component
+When the user clicks the Capture Image button
+Then an image of the last frame from the exam camera stream is captured
+AND the image is added to the evidence tray
+AND the image is shared in the active videoconference session

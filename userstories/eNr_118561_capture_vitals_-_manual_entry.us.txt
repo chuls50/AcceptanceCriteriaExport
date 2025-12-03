@@ -1,0 +1,106 @@
+User Story ID: 118561
+Title: eNcounter Refresh: Capture Vitals - Manual Entry
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Capture Vitals Screen (Manual Entry, Imperial Units)
+Given the user selected a patient
+When the user enters patient symptoms
+Then the Capture Vitals screen is displayed with the following elements:
+* Temperature field
+* Blood Pressure field
+* SpO2 field
+* Pulse field
+* Glucose field
+* Weight field
+*Capture Vitals With Device button (Outlined in User Story 119816 eNcounter Refresh: Capture Vitals - Programmatic Entry)
+* Patient Information Dropdown (Outlined in User Story 119844 eNcounter Refresh: Patient Information Dropdown)
+* Navigation bar at the top
+* Cancel button
+* Back button
+* Continue button
+
+Scenario 2: Temperature Input Validation
+Given the user has a temperature to enter
+When the user enters an invalid temperature value
+Then the number field indicates an input validation error
+Regex: "^[\d]*(\.[\d]+)?$"
+
+Scenario 3: Temperature defaults to Fahrenheit
+Given the user has navigated to the enter patient vitals screen
+When the user navigates to the temperature field
+Then the system will advise the user that the expected value is Fahrenheit
+
+Scenario 4: Update Temperature Input Measurement (F or C)
+Given the user has entered a temperature
+When the user selects the up and down arrow icon in the top right hand corner of the Temperature section
+Then the entered reading will switch from Fahrenheit to Celsius
+
+Scenario 5: Blood Pressure Input Validation
+Given the user has a blood pressure to enter
+When the user enters an invalid blood pressure value
+Then the number field indicates an input validation error
+Regex: "^\d+$"
+
+Scenario 6: SpO2 Input Validation
+Given the user has a SpO2 to enter
+When the user enters an invalid SpO2 value
+Then the number field indicates an input validation error
+Regex: "^\d+$"
+
+Scenario 7: Pulse Input Validation
+Given the user has a pulse to enter
+When the user enters an invalid pulse value
+Then the number field indicates an input validation error
+Regex: "^\d+$"
+
+Scenario 8: Glucose Input Validation
+Given the user has a glucose to enter
+When the user enters an invalid glucose value
+Then the number field indicates an input validation error
+Regex: "^\d+$"
+
+Scenario 9: Weight Input Validation
+Given the user has a weight to enter
+When the user enters an invalid weight value
+Then the number field indicates an input validation error
+Regex: "^[\d]*(\.[\d]+)?$"
+
+Scenario 10: Capture Vitals with Device
+Given the Capture Vitals screen is displayed
+When the user reviews the page
+Then the user will have the ability to select "Capture Vitals With Device" Button
+Outlined in -User Story 119816 eNcounter Refresh: Capture Vitals - Programmatic Entry
+
+Scenario 11: Patient Information Dropdown
+Given the Capture Vitals screen is displayed
+When the user reviews the page
+Then the user will have the ability to select the Patient Information Dropdown
+And the dropdown will expand for the user to review patient information
+Outlined in -User Story 119844 eNcounter Refresh: Patient Information Dropdown
+
+Scenario 12: Navigation Updated
+Given the user has entered symptoms
+When the application navigates to the Capture Vitals screen
+Then the navigation stepper indicates the Capture Vitals step is active
+And the previous steps are complete
+
+Scenario 13: Cancel
+Given the user is on the Capture Vitals screen
+When the user clicks the cancel button
+Then the application navigates to the Let's Get Started screen
+
+Scenario 14: Back
+Given the user is on the Capture Vitals screen
+When the user clicks the back button
+Then the application navigates back to the Enter Symptoms screen
+
+Scenario 15: Continue
+Given the user captures vitals
+When the user clicks the Continue button
+Then the application navigates to the Workspace screen (defined in #119007)
+And the vitals captured will display within the eNcounter Summary

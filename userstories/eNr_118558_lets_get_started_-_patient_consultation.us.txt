@@ -1,0 +1,21 @@
+User Story ID: 118558
+Title: eNcounter Refresh: Let's Get Started - Patient Consultation
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Workflow options are displayed
+Given the user enters valid credentials
+When the user authenticates successfully
+Then the "Let's Get Started" screen is displayed with the following options:
+* Patient Consultation
+* Direct-to-Patient Exam
+* Video Conference
+
+Scenario 2: Patient Consultation
+Given the user is on the Let's Get Started screen
+When the user clicks the Patient Consultation option
+Then the application navigates to the Select Patient screen (defined in #118559)

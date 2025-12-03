@@ -1,0 +1,16 @@
+User Story ID: 119219
+Title: eNcounter Refresh: Workspace - Devices - ClearSteth
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Scenario 1: Button placement is always below cameras
+Given a user clicks the devices button
+When there are cameras connected to the workstation
+Then the ClearSteth device will be listed below the available camera devices in the list
+
+Scenario 2: ClearSteth button is clicked
+Given a user opens the device menu
+When the user clicks the ClearSteth item in the list
+Then the ClearSteth panel opens

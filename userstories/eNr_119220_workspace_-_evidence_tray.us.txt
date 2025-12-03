@@ -1,0 +1,46 @@
+User Story ID: 119220
+Title: eNcounter Refresh: Workspace - Evidence Tray
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Scenario 1: User expands tray
+Given the evidence tray is collapsed
+When the user clicks the evidence tray
+Then the evidence tray expands fully allowing the user to see the collected items
+
+Scenario 2: User collapses tray
+Given the evidence tray is expanded
+When the user clicks the evidence tray
+Then the evidence tray collapses; hiding the collected items
+
+Scenario 3: User adds an image
+Given the user is viewing a live exam camera feed in the Workspace screen
+When the user takes a snapshot
+Then an item is added to the evidence tray using a thumbnail of the image
+
+Scenario 4: User adds a PDF
+Given the user is using one of the 3rd party integrated devices that generates PDF reports
+When the 3rd party integrated device generates a PDF report
+Then an item is added to the evidence tray that indicates a PDF report
+
+Scenario 5: User adds a video recording
+Given the user is viewing a live exam camera feed in the Workspace screen
+When the user records a video
+Then an item is added to the evidence tray that indicates a video recording
+
+Scenario 6: User removes an item
+Given one or more items are in the evidence tray
+When a user clicks the remove button on an item
+Then that item is removed from the evidence tray
+
+Scenario 7: Evidence count is updated
+Given a user is in the Workspace screen
+When the user adds or removes items from the evidence tray
+Then the number indicated at the top of the evidence tray accurately reflects the total count of items in the tray
+
+Scenario 8: Large number of items
+Given a user is in the Workspace screen
+When the user adds a large number of items to the evidence tray
+Then the evidence tray provides a way for the user to scroll through the items

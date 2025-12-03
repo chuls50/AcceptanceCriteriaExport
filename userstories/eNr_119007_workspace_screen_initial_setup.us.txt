@@ -1,0 +1,17 @@
+User Story ID: 119007
+Title: eNcounter Refresh: Workspace Screen (Initial Setup)
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Workspace Screen
+Given a user has authenticated with a valid encounter license
+When the user has captured vitals
+Then the Workspace screen is displayed with the following core elements:
+* Patient information at the top
+* videoconferencing local and remote elements in the center (when in call)
+* videoconferencing control bar at the bottom (when in call)
+* incoming call modal (when receiving a call)

@@ -1,0 +1,62 @@
+User Story ID: 118560
+Title: eNcounter Refresh: Enter Symptoms
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Enter Symptoms Screen
+Given the user chooses the Patient Consultation workflow
+When the user selects a patient
+Then the Enter Symptoms screen is displayed with the following elements:
+Patient symptoms field Estimated time period Number field Navigation bar at the top Cancel button Back button Continue button
+
+Scenario 2: Symptoms Entered
+Given a user types into the symptoms field
+When the symptoms field displays a list of matching items
+AND the user selects one of the items
+Then the symptoms field indicates the item as selected
+
+Scenario 3: Symptoms Removed
+Given the user entered a symptom
+When the user clicks a symptom for removal
+Then the symptom is removed from the list of selected symptoms
+
+Scenario 4: Symptoms Cleared
+Given the user entered one or more symptoms
+When the user clicks the clear all button
+Then all symptoms are removed from the list of selected symptoms
+
+Scenario 5: Number Input Validation
+Given the user has an estimated time period to enter
+When the user enters an invalid number
+Then the number field indicates an input validation error
+Regex: "^\d+"
+
+Scenario 6: Estimated Time Period
+Given the user has an estimated time period to enter
+When the user selects an option: hours, days, month, years
+Then only the selected option is indicated as selected
+
+Scenario 7: Navigation Updated
+Given the user has selected a patient
+When the application navigates to the Enter Symptoms screen
+Then the navigation stepper indicates the Enter Symptoms step is active
+And the previous steps are complete
+
+Scenario 8: Cancel
+Given the user is on the Enter Symptoms screen
+When the user clicks the cancel button
+Then the application navigates to the Let's Get Started screen
+
+Scenario 9: Back
+Given the user is on the Enter Symptoms screen
+When the user clicks the back button
+Then the application navigates back to the Select Patient screen
+
+Scenario 10: Continue
+Given the user entered symptoms
+When the user clicks the Continue button
+Then the application navigates to the Capture Vitals screen (defined in #118561)

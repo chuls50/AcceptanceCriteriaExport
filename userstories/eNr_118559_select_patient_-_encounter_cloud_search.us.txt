@@ -1,0 +1,128 @@
+User Story ID: 118559
+Title: eNcounter Refresh: Select Patient - eNcounter Cloud Search
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Select Patient Screen Displayed (eNcounter Cloud Search)
+Given the user authenticates successfully
+When the user chooses to start the Patient Consultation workflow
+Then the Select Patient screen is displayed with the following elements:
+* Search form: first name, last name, date of birth, medical record number, Patient ID, Alternative ID, clear button, search button
+* Search results: list of patients returned from search
+* Navigation bar at the top
+* Toggle: Include DICOM Worklist
+* Cancel button
+* Back button
+* Continue button
+
+Scenario 2: Successful Search (>= 1 result)
+Given the user is on the Select Patient screen
+When the user enters some search criteria
+And the user clicks the Search option
+Then the Select Patient screen displays a list of patients that fall under the search criteria
+And each patient is displayed with the following elements:
+* Patient Name
+* DOB and Age
+* Gender
+* Profile avatar
+* Dropdown arrow
+
+Scenario 3: Successful Search (0 results)
+Given the user is on the Select Patient screen
+When the user enters search criteria that does not match any patients
+And the user clicks the Search option
+Then the Select Patient screen indicates to the user that there were no results found
+And the create patient button will display
+
+Scenario 4: Unsuccessful Search
+Given the user is on the Select Patient screen
+When the user performs a search
+And the application fails to perform the search
+Then the Select Patient screen indicates to the user that there were no results found
+And the create patient button will display
+
+Scenario 5: First Name Input Validation
+Given the user is entering some search criteria in the form
+When the user enters an invalid input in the First Name field
+Then the form will indicate to the user that the input does not meet the validation check
+Regex: "^[a-zA-Z\p{L}\u0080-\u024F\u0022\s\/\-().,`'^~!?:@=&$+*]+$"
+
+Scenario 6: Last Name Input Validation
+Given the user is entering some search criteria in the form
+When the user enters an invalid input in the Last Name field
+Then the form will indicate to the user that the input does not meet the validation check
+Regex: "^[a-zA-Z\p{L}\u0080-\u024F\u0022\s\/\-().,`'^~!?:@=&$+*]+$"
+
+Scenario 7: Date of Birth Input Validation
+Given the user is entering some search criteria in the form
+When the user enters an invalid input in the Date of Birth field
+Then the form will indicate to the user that the input does not meet the validation check
+Default en-us format: MM/DD/YYYY
+
+Scenario 8: Medical Record Number Input Validation
+Given the user is entering some search criteria in the form
+When the user enters an invalid input in the Medical Record Number field
+Then the form will indicate to the user that the input does not meet the validation check
+Regex: "^[a-zA-Z0-9\p{L}\u0080-\u024F\u0022\s\/\-().,`'^~!?:@=&$+*]+$"
+
+Scenario 9: Clear Search Form
+Given the user has entered search criteria in any field
+When the user clicks the Clear button
+Then the form will clear out the search fields
+
+Scenario 10: Choose Patient from Results List
+Given the user has searched for a list of patients
+When the user chooses a patient from the list
+Then the search list will mark the patient as the selected option
+And the patient information drop down will open for the selected patient
+
+Scenario 11: User "Selects Patient"
+Given the user has chosen a patient from the list
+And the patient information drop down has opened
+When the user selects "Select Patient"
+Then the Continue button in the navigation stepper will become active
+
+Scenario 12: Navigation Updated
+Given the user authenticates successfully
+When the user chooses to start the Patient Consultation workflow
+Then the navigation stepper will indicate that the user is on the Select Patient step of the workflow
+
+Scenario 13: Cancel
+Given the user is on the Select Patient screen
+When the user clicks the Cancel option in the navigation stepper
+Then the user returns to the Let's Get Started screen
+And the consult is canceled
+
+Scenario 14: Continue
+Given the user selected a patient
+When the user clicks the Continue button
+Then the application navigates to the Enter Symptoms screen (defined in #118560)
+
+Scenario 15: Remove "Back" button from Select Patient Screen
+Given the encounter us has navigated to the select patient screen
+When the select patient screen renders
+Then the user will NOT have the ability to go back
+Note: Back button should be removed from this screen
+
+Scenario 16: Toggle Include Dicom Worklist - Accession ID
+Given the encounter use has navigated to the select patient screen
+When the user toggles ON the "Use Dicom Worklist" toggle
+Then the "Alternative ID" field will be REPLACED with the "Accession ID" field
+And the user will have the ability to search by Accession ID
+
+Scenario 17: Accession number is an optional field
+GIVEN I have signed into E3 as a valid user and navigated to the DICOM search page
+WHEN I land on the DICOM Search page and leave the Accession number blank
+THEN the Accession number will not be used as search criteria
+
+Scenario 18: Create Patient
+Given the user has navigated to the patient search screen
+When the screen has loaded
+Then the Create Patient button will be visible in the Patient Search Results area
+And the message will display above "Patient search results will appear here"
+
+Scenario 19: No M
