@@ -1,0 +1,23 @@
+User Story ID: 118556
+Title: eNcounter Refresh: Loading Screen
+Type: User Story
+==================================================
+
+ACCEPTANCE CRITERIA:
+
+Figma Link
+
+Scenario 1: Application loading screen is displayed
+Given a user launches eNcounter from the desktop shortcut
+When the application window opens
+Then the loading screen is visible to the user
+
+Scenario 2: Application loading screen completes successfully
+Given eNcounter is loading at start up
+When the loading process completes successfully
+Then the application navigates to the Welcome/Log In screen
+
+Scenario 3: Application loading screen completes unsuccessfully
+Given eNcounter is loading at start up
+When the loading process completes unsuccessfully
+Then the application displays an error to the user
